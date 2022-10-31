@@ -1,78 +1,27 @@
-import React, { useState,useEffect } from 'react';
-import { useParams } from "react-router-dom";
+import React from "react";
 
 const Product = () => {
+  return (
+    <div className="container">
+      <h2>Bag1</h2>
+      <br />
+      <h3>#5000</h3>
+      <br />
+      <p>Zara Bag</p>
 
-    
-    
-    const [name, setName] = useState("");
-    const [price, setPrice] = useState("");
-    const [description, setDescribtion] = useState("")
+      <h2>Bag2</h2>
+      <br />
+      <h3>#5000</h3>
+      <br />
+      <p> Tofe Bag</p>
 
-    const { id } = useParams();
-
-    useEffect(() => {
-        const thisProduct = products.find((product))
-        setName(thisProduct.name)
-        setPrice(thisproduct.price)
-        setDescribtion(thisproduct.description)
-    })
-    return (
-        <div className = "container">
-            <h2>{name}</h2>
-            <br />
-            <h3>{price}</h3>
-            <br />
-            <p>{description}</p>
-        </div>
-    )
-
-}
+      <h2>Bag3</h2>
+      <br />
+      <h3>#5000</h3>
+      <br />
+      <p>Luviton Bag</p>
+    </div>
+  );
+};
 
 export default Product;
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-   

@@ -12,7 +12,7 @@ const User = () => {  // 1. Create a component called Users
 
   useEffect(() => {   // 6. Create a useEffect hook that will fetch the users from the API
     setLoading(true);    // 7. Set the loading state variable to true before the API call is made  
-    fetch(`https://randomuser.me/api/?page=${page}&results=12`)   // 8. Fetch the users from the API using the page state variable to determine the page number to fetch from the API  
+    fetch(`https://randomuser.me/api/?results=12`)   // 8. Fetch the users from the API using the page state variable to determine the page number to fetch from the API  
       .then((response) => response.json())  // 9. Convert the response to JSON 
       .then((data) => {    // 10. Use the data from the API call to set the users state variable to the results from the API call  
         setUsers(data.results);  // 10. Set the users state variable to the data returned from the API call 
@@ -29,13 +29,13 @@ const User = () => {  // 1. Create a component called Users
   }; // 16. Create a function called setUser that will store the user in local storage so that it can be accessed by the UserDetails component
 
   return (  // 17. Return the users state variable to the UI
-    <div className="users">
-      <h1 className="users__heading">Customers Profile</h1>
-      <div className="top__btn">
+    <div className="user">
+      <h1 className="user-heading">Customers Profile</h1>
+      <div className="top-btn">
         <button className="cta active"
           onClick={() => setPage((prevPage) => Math.max(prevPage - 1, 1))}
           disabled={page === 1}>Prev</button>  {/* 18. Create a button that will decrease the page state variable by 1 when clicked and disable the button if the page state variable is 1 */}
-        <span className="page__num">{page}</span>  {/* 19. Display the page state variable */}
+        <span className="page-num">{page}</span>  {/* 19. Display the page state variable */}
         <button className="cta active"
           onClick={() => setPage((prevPage) => (!users.length ? prevPage : prevPage + 1))}
           disabled={!users.length}>Next</button> {/* 20. Create a button that will increase the page state variable by 1 when clicked and disable the button if the users state variable is empty*/}
@@ -43,7 +43,7 @@ const User = () => {  // 1. Create a component called Users
       <div className="">
         {loading && <h2>Loading...</h2>}
         {error && <h2>{error.message}</h2>}
-        <ul ul className="users__list">
+        <ul ul className="users-list">
           {users.map((user) => {
             const { name, gender, nat, login, dob, picture, phone, email, location } = user;
             return (
@@ -62,7 +62,7 @@ const User = () => {  // 1. Create a component called Users
           })}
         </ul>
 
-        <div className="bottom__btn">
+        <div className="bottom-btn">
           {
             <button className="btn active"
               disabled={page <= 1}

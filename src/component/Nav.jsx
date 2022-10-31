@@ -11,7 +11,7 @@ function Nav() {
 
   return (
     <nav>
-      <h3>ARIETE</h3>
+      <h3>Ariete Empire</h3>
       <ul className="nav-links">
 
       <Link style={navStyle} to="/home">
@@ -21,7 +21,7 @@ function Nav() {
           <li>About</li>
         </Link>
 
-        <Link style={navStyle} to="/product">
+        <Link style={navStyle} to="product">
           <li>Product</li>
           </Link>
 

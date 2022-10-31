@@ -5,11 +5,11 @@ const About = () => {
   return (
     <div className="about">
       <div className="aboutnav">
-        <Link to="/about">About</Link>
+        
+        <Link to="/contact">Contact</Link>
         <br />
-        <Link to="/about/history">History</Link>
-        <br />
-        <Link to="/about/services">Services</Link>
+        <Link to="/services">Services</Link>
+  
       
       </div>
       <Outlet />
