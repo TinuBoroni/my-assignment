@@ -3,9 +3,9 @@ Set up client-side pagination using randomuser.me API in one of your routes call
 import { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 
-const Users = () => {  // 1. Create a component called Users
-  const [users, setUsers] = useState([]);  // 2. Create a state variable called users and set it to an empty array
-  const [page, setPage] = useState(1);   // 3. Create a state variable called page and set it to 1
+const User = () => {  // 1. Create a component called Users
+  const [users, setUsers] = useState([]);  
+  const [page, setPage] = useState(1);   
   const [loading, setLoading] = useState(false);  // 4. Create a state variable called loading and set it to false
   const [error, setError] = useState(null);   // 5. Create a state variable called error and set it to null
   const [pages] = useState(10);  // 6. Create a state variable called pages and set it to 10
@@ -66,19 +66,18 @@ const Users = () => {  // 1. Create a component called Users
           {
             <button className="btn active"
               disabled={page <= 1}
-              onClick={() => setPage((prev) => prev - 1)}> prev </button>}  {/*21. Create a button that will decrease the page state variable by 1 when clicked and disable the button if the page state variable is less than or equal to 1 */}
+              onClick={() => setPage((prev) => prev - 1)}> prev </button>}  
           {Array.from({ length: pages }, (value, index) => index + 1).map(
             (each) => (
               <button className="btn__array active" onClick={() => setPage(each)}>{each}</button>
             )
-          )}     {/* 22. Map through the pages state variable and create a button for each page clicked on which will set the page state variable to the page index */}
-          {
+          )}     
             <button className="btn"
               disabled={page >= pages}
-              aria-disabled={page >= pages}  //
-              onClick={() => setPage((prev) => prev + 1)}> next </button>} {/* 23. Create a button that will increase the page state variable by 1 when clicked and disable the button if the page state variable is greater than or equal to the pages state variable */}
+              aria-disabled={page >= pages}  
+              onClick={() => setPage((prev) => prev + 1)}> next </button>
         </div>
-        <p className="pagination"> Pages: {page} of {pages}  </p> {/* 24. Display the page state variable and the pages state variable */}
+        <p className="pagination"> Pages: {page} of {pages}  </p> 
       </div>
 
       <Outlet />
@@ -86,4 +85,4 @@ const Users = () => {  // 1. Create a component called Users
   );
 }
 
-export default Users;
+export default User;

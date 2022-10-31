@@ -14,7 +14,7 @@ const Home = () => {
                 <br />
                 <p> we give value for your money</p>
                 <div className="home-content-image">
-                    <img src="./assest/img/images" alt="home" />
+                    <img src="./assests/img/images/picture1" alt="home" />
                 </div>
             </div>
             </div>

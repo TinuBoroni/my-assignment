@@ -1,33 +1,78 @@
 import React, { useState,useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-
-
+import { useParams } from "react-router-dom";
 
 const Product = () => {
-   
+
+    
+    
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
-    const [description, setDescription] = useState("");
+    const [description, setDescribtion] = useState("")
 
     const { id } = useParams();
 
     useEffect(() => {
-        const thisProduct = product.find((product) => product.id === parseint(id))
+        const thisProduct = products.find((product))
         setName(thisProduct.name)
-        setPrice(thisProduct.price)
-        setDescription(thisProduct.description)
-    });
+        setPrice(thisproduct.price)
+        setDescribtion(thisproduct.description)
+    })
     return (
-        <div className="container">
-            <h2>Name</h2>
-            <br/>
-            <h3>Price</h3>
-            <br/>
-            <p>Description</p>
+        <div className = "container">
+            <h2>{name}</h2>
+            <br />
+            <h3>{price}</h3>
+            <br />
+            <p>{description}</p>
         </div>
     )
+
 }
 
-
-
 export default Product;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   

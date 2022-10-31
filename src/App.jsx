@@ -4,7 +4,7 @@ import Home from "./component/Home";
 import About from "./component/About";
 import Product from "./component/Product";
 import Services from "./component/Services";
-import Navbar from "./component/Navbar";
+import Nav from "./component/Nav";
 import { ErrorBoundary } from "react-error-boundary";
 import User from "./component/User";
 // import NewProduct from "./component/NewProduct";
@@ -22,15 +22,15 @@ function App() {
       
 
       <ErrorBoundary FallbackComponent={Fallback}>
-        <Navbar />
+        <Nav />
 
         <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="user" element={<User />}>
-                     <Route path="userDetails" element={<userDetails />} />
+                  <Route path="/user" element={<User />}>
+                     <Route path="/userDetails" element={<userDetails />} />
                   </Route>
-                  <Route path="Product" element={<Product />} />
-                  <Route path="about" element={<About />} />
+                  <Route path="/Product" element={<Product />} />
+                  <Route path="/about" element={<About />} />
                   <Route path="*" element={<Error />} />
                </Routes>
       </ErrorBoundary>
